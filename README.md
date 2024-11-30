@@ -24,11 +24,12 @@ The project consists of three major components:
 1. **Python Backend**
    - The Python script processes video feed from the ESP32-CAM to detect faces and calculate servo angles for precise hand movements.
    - API Endpoints:
-     - **`/start_capturing` (POST)**: Starts the ESP32-CAM stream.
+     - **`/start_capturing` (POST)**: Starts **reading** the ESP32-CAM stream.
      - **`/get_servo_angles` (GET)**: Returns the computed servo angles as JSON.
+     - **`/stop_capturing` (POST)**: Stops **reading** the ESP32-CAM stream.
    - Dependencies:
      ```bash
-     pip install flask opencv-python numpy cvzone
+     pip install flask opencv-python numpy cvzone threading
      ```
 
 2. **ESP8266 Code**
